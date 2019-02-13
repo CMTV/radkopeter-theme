@@ -1,0 +1,143 @@
+@import "vars";
+@import "layout";
+
+.sub-header
+{
+    display: flex;
+    align-items: center;
+
+    padding: $spacing 0;
+
+    &:not(:first-of-type)
+    {
+        padding-top: 3 * $spacing;
+    }
+
+    @include layout-mobile
+    {
+        padding: $spacing;
+    }
+
+    .icon-container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include layout-extra-small
+        {
+            display: none;
+        }
+
+        &, & img
+        {
+            width: 65px;
+            height: 65px;
+            border-radius: $border-radius;
+
+            @include layout-mobile
+            {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        &:hover i
+        {
+            transform: scale(1.1);
+        }
+
+        i
+        {
+            color: white;
+            font-size: 35px;
+
+            transition: transform 0.2s;
+
+            @include layout-mobile
+            {
+                font-size: 25px;
+            }
+        }
+    }
+
+    .info
+    {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+        margin-left: $spacing;
+
+        @include layout-extra-small
+        {
+            margin-left: 0;
+        }
+
+        .title
+        {
+            font-size: 35px;
+
+            @include layout-mobile
+            {
+                font-size: 27px;
+            }
+        }
+
+        .count
+        {
+            position: relative;
+            bottom: 12px;
+            left: 10px;
+            cursor: help;
+        }
+    }
+
+    .link
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+        color: $muted-text-color;
+
+        @include layout-mobile
+        {
+            width: 35px;
+            height: 35px;
+            font-size: 15px;
+
+            border: 2px solid $border-color;
+            border-radius: $border-radius;
+        }
+
+        &:hover
+        {
+            i
+            {
+                @include layout-full
+                {
+                    transform: translateX(2px);
+                }
+            }
+        }
+
+        .label
+        {
+            margin-right: $spacing-smaller;
+
+            @include layout-mobile
+            {
+                display: none;
+            }
+        }
+
+        i
+        {
+            position: relative;
+            transition: transform 0.2s;
+        }
+    }
+}

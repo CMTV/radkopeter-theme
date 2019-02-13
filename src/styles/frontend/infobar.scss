@@ -1,0 +1,157 @@
+@import "vars";
+@import "layout";
+
+.infobar
+{
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+    color: $muted-text-color;
+
+    border: 2px solid $light-border-color;
+    border-radius: $border-radius;
+    background: $light-background;
+
+    padding: $spacing-small $spacing-smaller;
+    margin-bottom: $spacing;
+
+    @include layout-mobile
+    {
+        padding: 0;
+        border: none;
+        background: transparent;
+        align-items: flex-start;
+    }
+
+    @include layout-extra-small
+    {
+        flex-direction: column-reverse;
+    }
+
+    .info-items
+    {
+        flex: 1;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @include layout-mobile
+        {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        @include layout-extra-small
+        {
+            margin-top: $spacing - $spacing-smaller;
+        }
+
+        .item
+        {
+            display: flex;
+            align-items: center;
+
+            cursor: help;
+
+            &:not(:last-of-type)
+            {
+                margin-right: $spacing;
+
+                @include layout-mobile
+                {
+                    margin-bottom: $spacing-small;
+                }
+            }
+
+            i, .icon
+            {
+                margin-right: $spacing-small;
+
+                @include layout-mobile
+                {
+                    width: 20px;
+                }
+            }
+
+            &-status
+            {
+                .status-circle, .inner-circle
+                {
+                    border-radius: 50%;
+                }
+
+                .status-circle
+                {
+                    width: 10px;
+                    height: 10px;
+
+                    border-width: 1px;
+                    border-style: solid;
+
+                    &.green     { border-color: #00B500; background: #5EED5E; }
+                    &.yellow    { border-color: #b59a00; background: #edde5a; }
+                    &.red       { border-color: #B50000; background: #ED5E5E; }
+                }
+            }
+        }
+    }
+
+    .icon-links
+    {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 20px;
+
+        @include layout-mobile
+        {
+            position: relative;
+            left: $spacing-smaller;
+        }
+
+        @include layout-extra-small
+        {
+            left: 0;
+        }
+
+        .icon-link
+        {
+            @include layout-mobile
+            {
+                width: 40px;
+                height: 40px;
+
+                border: 2px solid $border-color;
+                border-radius: $border-radius;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                margin: 0 $spacing-smaller $spacing-smaller 0;
+            }
+
+            &:not(:last-of-type)
+            {
+                margin-right: $spacing-smaller;
+            }
+
+            @mixin brand-color($brand, $color)
+            {
+                &.#{$brand}:hover
+                {
+                    color: $color;
+                    border-color: $color;
+                }
+            }
+
+            @include brand-color('globe',       $black-text-color);
+            @include brand-color('vk',          #5C7CB4);
+            @include brand-color('github',      #0B0A0A);
+            @include brand-color('twitter',     #4999F1);
+            @include brand-color('google-play', #65A03E);
+            @include brand-color('youtube',     #F91A07);
+        }
+    }
+}

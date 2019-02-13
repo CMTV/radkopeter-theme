@@ -1,0 +1,30 @@
+$max-width: 960px;
+$mobile-width: 715px;
+$extra-small-width: 400px;
+
+@mixin layout-full
+{
+    @media (min-width: $mobile-width)
+    {
+        @content;
+    }
+}
+
+@mixin layout-mobile
+{
+    @media (max-width: $mobile-width)
+    {
+        @content;
+    }
+}
+
+@mixin layout-extra-small
+{
+    @media (max-width: $extra-small-width) {
+        @content;
+    }
+}
+
+$spacing: 20px;
+$spacing-smaller: $spacing / 2;
+$spacing-small: $spacing / 3;

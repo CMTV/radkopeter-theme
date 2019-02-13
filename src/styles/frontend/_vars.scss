@@ -1,0 +1,21 @@
+//
+// Borders
+//
+
+$border-color: #D9D9D9;
+$light-border-color: lighten($border-color, 8%);
+$border-radius: 3px;
+
+//
+// Backgrounds
+//
+
+$background: lighten($border-color, 11%);
+$light-background: lighten($border-color, 14%);
+
+//
+// Text colors
+//
+
+$black-text-color: #3C3C3C;
+$muted-text-color: #8C8C8C;

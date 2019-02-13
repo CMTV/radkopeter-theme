@@ -1,0 +1,24 @@
+@import "../frontend/vars";
+@import "../frontend/layout";
+
+body, .editor-post-title__input
+{
+    font-family: "Open Sans", sans-serif;
+}
+
+.wp-block
+{
+    @include layout-full
+    {
+        width: 90%;
+    }
+
+    max-width: $max-width;
+
+    margin: 0 auto;
+}
+
+article
+{
+    @import "../frontend/project-content";
+}

@@ -1,0 +1,36 @@
+@import "vars";
+@import "layout";
+
+.error-404
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: $black-text-color;
+
+    .message
+    {
+        display: flex;
+        align-items: center;
+
+        font-size: 40px;
+
+        i
+        {
+            margin-right: $spacing;
+        }
+    }
+
+    .return
+    {
+        color: $muted-text-color;
+        margin-top: $spacing;
+    }
+}

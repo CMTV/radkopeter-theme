@@ -1,0 +1,297 @@
+@import "vars";
+@import "layout";
+
+$project-icon-size: 44px;
+$project-icon-size-mini: 36px;
+
+.projects
+{
+    @include layout-mobile
+    {
+        padding: 0 $spacing;
+    }
+
+    @include layout-extra-small
+    {
+        padding: 0;
+    }
+}
+
+.project-block
+{
+    margin-left: 65px - $project-icon-size;
+    display: flex;
+
+    @include layout-mobile
+    {
+        margin-left: 0;
+    }
+
+    .icon
+    {
+        @include layout-mobile
+        {
+            display: none;
+        }
+
+        &, img
+        {
+            width: $project-icon-size;
+            height: $project-icon-size;
+        }
+
+        img
+        {
+            border-radius: $border-radius;
+            display: block;
+        }
+    }
+
+    .projects &:first-of-type
+    {
+        margin-top: $spacing;
+
+        @include layout-extra-small
+        {
+            margin-top: 0;
+        }
+    }
+
+    .projects &:not(:last-of-type)
+    {
+        margin-bottom: 2 * $spacing;
+
+        @include layout-extra-small
+        {
+            margin-bottom: 0;
+        }
+
+        .block
+        {
+            @include layout-extra-small
+            {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .block {
+        flex: 1;
+        margin-left: $spacing;
+
+        border: 2px solid $border-color;
+        border-radius: $border-radius;
+
+        position: relative;
+
+        @include layout-mobile
+        {
+            margin-left: 0;
+        }
+
+        @include layout-extra-small
+        {
+            border-left: 0;
+            border-right: 0;
+            border-radius: 0;
+        }
+
+        .header, .body, .footer
+        {
+            padding: $spacing-smaller;
+
+            @include layout-extra-small
+            {
+                padding: $spacing;
+            }
+        }
+
+        .header
+        {
+            background: $background;
+            border-bottom: 2px solid $border-color;
+
+            display: flex;
+            align-items: center;
+
+            @include layout-full
+            {
+                height: $project-icon-size;
+            }
+
+            .icon-mini
+            {
+                @include layout-full
+                {
+                    display: none;
+                }
+
+                &, img
+                {
+                    width: $project-icon-size-mini;
+                    height: $project-icon-size-mini;
+                }
+
+                img
+                {
+                    border-radius: $border-radius;
+                    display: block;
+                }
+            }
+
+            .info
+            {
+                display: flex;
+                flex: 1;
+
+                @include layout-full
+                {
+                    align-items: center;
+                }
+
+                @include layout-mobile
+                {
+                    flex-direction: column;
+                    margin-left: $spacing-smaller;
+                }
+
+                h3
+                {
+                    flex: 1px;
+                    font-size: 16px;
+                }
+
+                .date
+                {
+                    font-size: 13px;
+                    color: $muted-text-color;
+                    cursor: help;
+
+                    i
+                    {
+                        margin-right: $spacing-small / 2;
+
+                        @include layout-mobile
+                        {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .body
+        {
+            color: #434343;
+        }
+
+        .footer
+        {
+            display: flex;
+            align-items: center;
+
+            border-top: 2px solid $light-border-color;
+            background: $light-background;
+
+            @include layout-full
+            {
+                height: 35px;
+            }
+
+            .tags
+            {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                flex: 1;
+
+                .tag
+                {
+                    font-size: 12px;
+                    color: $muted-text-color;
+
+                    &:not(:last-of-type)
+                    {
+                        margin-right: $spacing / 4;
+
+                        &:after
+                        {
+                            color: $muted-text-color;
+                            content: ",";
+                        }
+                    }
+
+                    &:hover
+                    {
+                        color: $black-text-color;
+                    }
+                }
+
+                i
+                {
+                    font-size: 12px;
+                    color: $muted-text-color;
+                    cursor: help;
+                    margin-right: $spacing-small;
+                }
+            }
+
+            .more-info
+            {
+                font-size: 13px;
+                color: $muted-text-color;
+
+                &:hover
+                {
+                    color: $black-text-color;
+
+                    i
+                    {
+                        transform: translateX(2px);
+                    }
+                }
+
+                i
+                {
+                    margin-left: $spacing-small / 4;
+                    transition: transform 0.2s;
+                }
+            }
+        }
+    }
+
+    // Triangle
+    .block
+    {
+        &:after, &:before
+        {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 100%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+
+            @include layout-mobile
+            {
+                display: none;
+            }
+        }
+
+        &:before
+        {
+            top: 9px;
+            border-color: transparent $border-color transparent transparent;
+            border-width: 12px;
+        }
+
+        &:after
+        {
+            top: 12px;
+            border-color: transparent $background transparent transparent ;
+            border-width: 9px;
+        }
+    }
+}

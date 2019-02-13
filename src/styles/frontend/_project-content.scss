@@ -1,0 +1,84 @@
+@import "vars";
+@import "layout";
+
+*
+{
+    @include layout-extra-small
+    {
+        font-size: 93%;
+    }
+}
+
+& > p
+{
+    color: #434343;
+    text-align: justify;
+    letter-spacing: 0.02em;
+
+    &:not(:last-of-type)
+    {
+        margin-bottom: $spacing;
+    }
+}
+
+h3, h4, h5, h6
+{
+    margin-top: 2 * $spacing;
+    margin-bottom: $spacing;
+
+    color: $black-text-color;
+}
+
+h3
+{
+    font-size: 27px;
+
+    @include layout-mobile
+    {
+        font-size: 22px;
+    }
+}
+
+h4
+{
+    font-size: 20px;
+
+    @include layout-mobile
+    {
+        font-size: 18px;
+    }
+}
+
+h5
+{
+    font-size: 16px;
+}
+
+.wp-block-quote
+{
+    border-left: 5px solid $black-text-color;
+
+    padding-left: $spacing;
+    margin-bottom: $spacing;
+
+    color: #434343;
+
+    cite
+    {
+        display: block;
+        color: $muted-text-color;
+        margin-top: $spacing-smaller;
+    }
+}
+
+.wp-block-image
+{
+    .alignright, .alignleft, .aligncenter
+    {
+        @include layout-mobile
+        {
+            float: none;
+            margin: 0 auto;
+        }
+    }
+}

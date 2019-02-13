@@ -1,0 +1,206 @@
+@import "vars";
+@import "layout";
+
+.me
+{
+    //background: green; // todo: debug
+
+    padding: 25% 0 $spacing;
+    display: flex;
+
+    @include layout-mobile
+    {
+        padding: $spacing;
+    }
+
+    .photo
+    {
+        width: 200px;
+        height: 260px;
+
+        @include layout-mobile
+        {
+            display: none;
+        }
+
+        img
+        {
+            border-radius: $border-radius;
+            display: block;
+        }
+    }
+
+    .info
+    {
+        flex: 1;
+
+        @include layout-full
+        {
+            margin-left: $spacing;
+        }
+
+        .photo-smaller
+        {
+            @include layout-full
+            {
+                display: none;
+            }
+
+            img
+            {
+                display: block;
+                border-radius: $border-radius;
+            }
+        }
+
+        .header
+        {
+            display: flex;
+            align-items: center;
+
+            .header-info
+            {
+                @include layout-mobile
+                {
+                    margin-left: $spacing;
+                }
+            }
+        }
+
+        .full-name
+        {
+            font-size: 50px;
+            line-height: 0.8;
+
+            position: relative;
+            left: -2px;
+
+            @include layout-mobile
+            {
+                font-size: 29px;
+            }
+
+            @include layout-extra-small
+            {
+                font-size: 20px;
+            }
+
+            .nick
+            {
+                position: relative;
+                bottom: 30px;
+
+                font-size: 40%;
+                color: #A0A0A0;
+
+                cursor: help;
+
+                @include layout-mobile
+                {
+                    bottom: 20px;
+                }
+
+                @include layout-extra-small
+                {
+                    display: none;
+                }
+            }
+        }
+
+        .facts
+        {
+            margin-top: $spacing-smaller;
+            display: flex;
+
+            @include layout-extra-small
+            {
+                flex-direction: column;
+                margin-top: $spacing-small;
+            }
+
+            .fact
+            {
+                color: $muted-text-color;
+
+                @include layout-mobile
+                {
+                    font-size: 90%;
+                }
+
+                @include layout-extra-small
+                {
+                    font-size: 80%;
+                }
+
+                &:not(:last-of-type)
+                {
+                    margin-right: $spacing;
+                }
+
+                .label
+                {
+                    &:after
+                    {
+                        content: ':';
+                    }
+                }
+            }
+        }
+
+        .bio
+        {
+            margin-top: $spacing;
+            text-align: justify;
+
+            @include layout-extra-small
+            {
+                font-size: 93%;
+            }
+        }
+
+        .contact-block
+        {
+            margin-top: $spacing;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include layout-mobile
+            {
+                justify-content: center;
+            }
+
+            .contact
+            {
+                border: 2px  solid $border-color;
+                border-radius: $border-radius;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 0 $spacing;
+                height: 60px;
+
+                font-size: 20px;
+
+                color: #FF4141;
+
+                &:not(:last-of-type)
+                {
+                    margin-right: $spacing-smaller;
+                }
+
+                &:hover
+                {
+                    cursor: pointer;
+                    border-color: #FF4141;
+                }
+
+                i
+                {
+                    margin-right: $spacing-smaller;
+                }
+            }
+        }
+    }
+}
