@@ -116,6 +116,7 @@ else
         </section>
 
         <article>
+            <div class="excerpt"><?php the_excerpt(); ?></div>
             <?php the_content(); ?>
         </article>
 

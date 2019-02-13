@@ -3,13 +3,20 @@
 
 *
 {
+    text-align: justify;
+
     @include layout-extra-small
     {
         font-size: 93%;
     }
 }
 
-& > p
+.excerpt
+{
+    margin-bottom: $spacing;
+}
+
+& > p, .excerpt
 {
     color: #434343;
     text-align: justify;
