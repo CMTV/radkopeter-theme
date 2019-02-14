@@ -88,4 +88,32 @@ h5
             margin: 0 auto;
         }
     }
+
+    .aligncenter
+    {
+        figcaption
+        {
+            text-align: center;
+        }
+    }
+
+    .alignright
+    {
+        figcaption
+        {
+            text-align: right;
+        }
+    }
+
+    img
+    {
+        height: auto;
+    }
+
+    &.border img
+    {
+        padding: $spacing-smaller;
+        border: 2px solid $border-color;
+        border-radius: $border-radius;
+    }
 }
