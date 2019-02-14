@@ -21,7 +21,7 @@
     margin-bottom: $spacing;
 }
 
-& > p, .excerpt
+& > p, .excerpt, ul, ol
 {
     color: #434343;
     letter-spacing: 0.02em;
@@ -115,4 +115,10 @@ h5
         border: 2px solid $border-color;
         border-radius: $border-radius;
     }
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption
+{
+    background: linear-gradient(0deg,rgba(52, 52, 52, 0.7) 0,rgba(0,0,0,.3) 60%,transparent);
 }

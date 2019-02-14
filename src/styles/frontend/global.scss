@@ -15,6 +15,16 @@ body
     background: white;
 }
 
+ol, ul
+{
+    list-style-position: inside;
+
+    li:not(:last-of-type)
+    {
+        margin-bottom: $spacing-small;
+    }
+}
+
 a
 {
     color: inherit;
