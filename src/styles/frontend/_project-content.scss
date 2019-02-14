@@ -11,6 +11,11 @@
     }
 }
 
+& > :not(:last-child)
+{
+    margin-bottom: $spacing;
+}
+
 .excerpt
 {
     margin-bottom: $spacing;
@@ -19,13 +24,7 @@
 & > p, .excerpt
 {
     color: #434343;
-    text-align: justify;
     letter-spacing: 0.02em;
-
-    &:not(:last-of-type)
-    {
-        margin-bottom: $spacing;
-    }
 }
 
 h3, h4, h5, h6
