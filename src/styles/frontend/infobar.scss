@@ -137,6 +137,12 @@
                 margin-right: $spacing-smaller;
             }
 
+            &:hover
+            {
+                color: $black-text-color;
+                border-color: $black-text-color;
+            }
+
             @mixin brand-color($brand, $color)
             {
                 &.#{$brand}:hover
