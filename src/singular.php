@@ -45,7 +45,7 @@ else
 
                         <?php if (get_field('status_type') === 'custom'): ?>
                             <style>
-                                .infobar .icon.status-circle
+                                .infobar .status-circle
                                 {
                                     background: <?php echo get_field('status_colors')['background']; ?>;
                                     border-color: <?php echo get_field('status_colors')['border']; ?>;

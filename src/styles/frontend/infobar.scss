@@ -77,6 +77,8 @@
 
             &-status
             {
+                line-height: 0;
+
                 .status-circle, .inner-circle
                 {
                     border-radius: 50%;
@@ -152,7 +154,6 @@
                 }
             }
 
-            @include brand-color('globe',       $black-text-color);
             @include brand-color('vk',          #5C7CB4);
             @include brand-color('github',      #0B0A0A);
             @include brand-color('twitter',     #4999F1);
