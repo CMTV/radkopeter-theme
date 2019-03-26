@@ -232,7 +232,7 @@ function radkopeter_the_status_explain(string $status)
             echo __('The project is paused now', 'radkopeter');
             break;
         case 'red':
-            echo __('The project is closed', 'radkopeter');
+            echo __('The project is closed and not supported anymore', 'radkopeter');
             break;
         case 'custom':
             echo get_field('status_label_explain')['explain'];
